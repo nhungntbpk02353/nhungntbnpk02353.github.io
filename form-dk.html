@@ -1,0 +1,242 @@
+
+<html lang="en">
+
+    <head>
+      <title>Đăng ký</title>
+      <!-- Latest compiled and minified CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+  body {
+    /* background-color: #0093E9; */
+    /* background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%); */
+    background: url(https://cdn.tgdd.vn/Files/2017/04/21/974581/maxresdefault1_1280x720-800-resize.jpg) no-repeat center center/cover;
+  }
+  /*  */
+  #frmDangKy {
+    background: #fff;
+    padding:20px;
+    margin-top: 50px;
+  }
+  
+  #frmDangKy button {
+    margin-top: 20px;
+  }
+  .flex {
+    display: flex;
+    justify-content: center;
+  }
+  .btn-submit {
+    width: 200px;
+  }
+  .error{
+    color: red;
+  }
+     </style>
+    </head>
+    <body>
+      <div class="container">
+       
+        <div class="row flex">
+          <div class="col-sm-6 col-sm-offset-2">
+          
+            <form id="frmDangKy">
+              <h3>Đăng ký</h3> 
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+                
+              <span class="error" id="error-name"></span>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">User name</label>
+                <input type="text" class="form-control" id="username" aria-describedby="emailHelp">
+  
+                <span class="error" id="error-userName"></span>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email</label>
+                <input type="text" class="form-control" id="email" aria-describedby="emailHelp">
+  
+                <span class="error" id="error-email"></span>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password">
+  
+                <span class="error" id="error-password"></span>
+              </div>
+              <select class="form-select" id="role" aria-label="Default select example">
+                <option selected>select role</option>
+                <option value="admin">admin</option>
+                <option value="user">user</option>
+              </select>
+              <button type="submit" class="btn btn-primary btn-submit">Đăng ký</button>
+              <div>
+                <a class="btn btn-link" href="./form-dn.html">Đã có tài khoản</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      </div>
+    </body>
+    <script >
+    
+  
+    class User {
+      constructor(name, username, password, email, roles) {
+          this.name = name;
+          this.username = username;
+          this.password = password;
+          this.email = email
+          this.role = roles;
+      }
+      getUsername() {
+          return this.username;
+      }
+      getpassword() {
+          return this.password;
+      }
+      getRole(){
+          return this.role    
+      }
+      xuatthongtin() {
+          console.log(`Name: ${this.name}`);
+          console.log(`Username: ${this.username}`);
+          console.log(`Password: ${this.password}`);
+          console.log(`Roles: ${this.role}`);
+      }
+  }
+  //new store
+  class Storeusers {
+      constructor() {
+          this.users = []
+      }
+      addUser(user) {
+          // this.users.push(user)
+          const currenList = this.users
+          let flag = false
+          for (let i = 0; i < currenList.length; i++) {
+              const currenUser = currenList[i]
+              if (currenUser.getUsername() === user.getUsername()) {
+                  return flag
+              }
+          }
+          if (!flag) {
+              flag = true
+              this.users.push(user)
+          }
+          return flag
+      }
+  
+      login(username, password) {
+          const currenList = this.users
+          for (let i = 0; i < currenList.length; i++) {
+              const currenUser = currenList[i]
+              if (currenUser.getUsername() === username &&
+                  currenUser.getpassword() === password) {
+                  return currenUser
+              }
+          }
+          return null
+      }
+      getUserList() {
+          return this.users
+      }
+      save(){
+          const data=JSON.stringify(this.users)
+          localStorage.setItem('users',data)
+      }
+      getdata () {
+         const data= localStorage.getItem('users')
+         if (data){
+             const arrUser = JSON.parse(data)
+             const listUser=[]
+             for(let i=0;i<arrUser.length;i++){
+                 const UserTemp = new User(arrUser[i].
+                  name, arrUser[i].username,arrUser[i].
+                  password,arrUser[i].email,arrUser[i].
+                  roles)
+                  listUser.push(UserTemp);
+             }
+             this.users = listUser
+         } 
+      }
+  }
+  //handle UI
+  const store = new Storeusers()
+  store.getdata()
+  console.log(store)
+  document.getElementById('frmDangKy') &&document.getElementById('frmDangKy').addEventListener('submit',function(event){
+      event.preventDefault();
+      const name =document.getElementById('name').value;
+      const username =document.getElementById('username').value;
+      const email =document.getElementById('email').value;
+      const password =document.getElementById('password').value;
+      const Roles =document.getElementById('role').value;
+      document.getElementById('error-name').innerHTML = ''
+      document.getElementById('error-userName').innerHTML = ''
+      document.getElementById('error-email').innerHTML = ''
+      document.getElementById('error-password').innerHTML = ''
+      if(name ==''){
+        document.getElementById('error-name').innerHTML = 'Name không được để trống'
+      } if(username==''){
+        document.getElementById('error-userName').innerHTML = 'userName không được để trống'
+      } if(password==''){
+        document.getElementById('error-password').innerHTML = 'Password không được để trống'
+      } if(email==''){
+        document.getElementById('error-email').innerHTML = 'Email không được để trống'
+      }  // alert('Vui lòng nhập thông tin')
+        else{
+              const createUser= new User(name,username,password,email,Roles);
+              const ischeck =store.addUser(createUser);
+              if(ischeck){
+                  store.save()
+                  alert('đăng kí thành công')
+                  //  window.location="./dangnhap.html"    
+          }
+          //  console.log(store.getUserList())
+          }
+  })
+  
+  document.getElementById('frmLogin') && document.getElementById('frmLogin').addEventListener('submit', function (event) {
+      event.preventDefault()
+      const username = document.getElementById('username').value
+      const password = document.getElementById('password').value
+      const Roles =document.getElementById('role').value;
+      if (username == '' || password == '') {
+          alert('Nhập đầy đủ thông tin')
+      }
+      else{
+          const isLogin=store.login(username,password)
+          //
+          if(isLogin){
+              alert('đăng nhập thành công')
+              console.log(isLogin)
+              if(isLogin.getRole()=='admin'){
+                  window.location="./admin.html"
+              }else{
+                  window.location="./user.html"
+              }           
+          }else{
+              alert('Sai thông tin')
+          }
+       console.log('login',isLogin)
+      }
+      })
+  
+  //     document.getElementById('error-name').innerHTML = ''
+  
+  // document.getElementById('error-userName').innerHTML = ''
+  // if (name === '') {
+  //     document.getElementById('error-name').innerHTML = 'Name không được để trống'
+  // //alert('please enter name')
+  // }
+  
+  // if (username === '') {
+  //     document.getElementById('error-userName').innerHTML = 'userName không được để trống'
+  // //alert('please enter name')
+  // }
+  
+    </script>
+  </html>

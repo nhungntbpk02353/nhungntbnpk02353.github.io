@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/af4b63cb01.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./themify-icons/themify-icons.css">
+    <!-- <link rel="stylesheet" href="./fonts/fontawesome-free-6.0.0-web/css/all.min.css"> -->
+    <title>Điện Máy Xanh</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        ul {
+            list-style: none;
+
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        header {
+            background-color: #0078BB;
+            text-align: center;
+            border-radius: 2px;
+
+        }
+
+        .logo img {
+            width: 130px;
+            height: 48px;
+        }
+
+        nav {
+            background-color: #009DE0;
+            height: 50px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav li,
+        a {
+            color: white;
+            font-size: 12px;
+        }
+
+        .ĐL i {
+            font-size: 12px;
+            margin-left: 5px;
+            color: white;
+        }
+
+        .ĐL a,
+        i:hover {
+            color: #fff200;
+        }
+
+        .search {
+            position: relative;
+        }
+
+        .search input {
+            height: 30px;
+            width: 100%;
+            border-radius: 5px;
+            padding-left: 6px;
+            outline: none;
+        }
+
+        .search i {
+            position: absolute;
+            font-size: 15px;
+            right: 12px;
+            color: rgb(99, 96, 96);
+            line-height: 30px;
+        }
+
+        .giohang button {
+            height: 35px;
+            width: 100%;
+            padding: 0 10px;
+            background-color: #009DE0;
+            color: white;
+            border: 1px solid rgb(214, 214, 214);
+            border-radius: 5px;
+        }
+
+        .giohang button:hover {
+            background-color: #deebf165;
+        }
+
+        .giohang button i {
+            margin-right: 10px;
+            color: white;
+        }
+
+        .ĐH {
+            text-align: center;
+        }
+
+        .ĐH a:hover {
+            color: #fff200;
+        }
+
+        .nap :hover {
+            color: #fff200;
+        }
+
+        .nap i {
+            margin-right: 5px;
+            font-size: 15px;
+            color: white;
+        }
+
+        .TV :hover {
+            color: #fff200;
+        }
+
+        .KM :hover {
+            color: #fff200;
+        }
+
+        .Bep :hover {
+            color: #fff200;
+        }
+
+        .DMuc a {
+            color: #333;
+            font-size: 15px;
+            margin-left: 10px;
+
+        }
+
+
+        section ul {
+            display: flex;
+        }
+
+        .menu-bar .container .menu-bar-content {
+            background-color: #fff;
+            height: 50px;
+            box-shadow: 0 0 5px;
+            border-radius: 3px;
+            width: 1195px;
+        }
+
+        .DMuc i {
+            margin-left: 5px;
+            font-size: 15px;
+        }
+
+        .DMuc .all {
+            color: #0078BB;
+            margin-left: 10px;
+        }
+
+        .menu-bar-content .item {
+            padding-top: 15px;
+
+        }
+
+        .item .Tivi a {
+            color: #333;
+            font-size: 18px;
+            margin-left: 70px;
+        }
+
+        .item .Tivi i {
+            margin-right: 5px;
+
+        }
+
+
+        .item .Locnuoc i {
+            color: black;
+            font-size: 18px;
+            margin-right: 10px;
+
+
+        }
+
+        .item .Locnuoc a {
+            color: rgb(29, 28, 28);
+            font-size: 18px;
+            margin-left: 90px;
+
+        }
+
+        .item .laptop a {
+            color: rgb(29, 28, 28);
+            font-size: 18px;
+            margin-left: 70px;
+
+        }
+
+        .item .laptop i {
+            color: rgb(19, 17, 17);
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        /* menu 2 cấp */
+        .menu-bar-content ul,
+        li {
+            position: relative;
+            margin-left: 6px;
+        }
+
+        .menu2 {
+
+            background-color: rgb(231, 209, 209);
+            width: 200px;
+            height: auto;
+            left: 60px;
+            margin-top: 18px;
+            display: none;
+        }
+
+        .menu-bar-content ul li:hover .menu2 {
+            display: block;
+        }
+
+        .menu2 ul {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ảnh */
+        .anh {
+            padding: 20px 0;
+            height: 350px;
+        }
+
+        .anh-content {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .anh-content-left {
+            width: 65%;
+            width: 100%;
+            height: 300px;
+        }
+
+        .anh-content-left img {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+
+
+        }
+
+        .anh-content-right {
+            width: 35%;
+            display: inline-block;
+            padding: 0 21px;
+            text-align: center;
+            margin: 0 0 0 10px;
+        }
+
+        .anh-content-right li a {
+            width: 50%;
+            height: 50%;
+            margin-bottom: 10px;
+
+        }
+
+        .anh-content-right li img {
+            height: 150px;
+            width: 132px;
+            border-radius: 5px;
+
+        }
+
+        .banner-1 img {
+            width: 1198px;
+            border-radius: 3px;
+        }
+
+        .dsach-container {
+            width: 1200px;
+        }
+
+        .dsach-content {
+            background: url(https://cdn.tgdd.vn/2022/03/banner/DESK-1200x90-2.png) no-repeat center center/cover;
+            padding: 15px;
+            overflow: auto;
+            height: 519px;
+        }
+
+        .dsach-content {
+            background-color: white;
+            padding: 15px;
+            overflow: auto;
+            height: 519px;
+        }
+
+        .dsach-content-items {
+            display: inline-block;
+
+            width: 1200px;
+            margin-left: 50px;
+        }
+
+        .dsach-content-item {
+            width: 19%;
+            background-color: white;
+            padding: 50px 25px 12px;
+            border-radius: 5px;
+            float: left;
+            margin: 0.5%;
+        }
+
+        .dsach-content-item>img {
+            width: 100%;
+            margin-left: 1px;
+            margin-bottom: 46px;
+
+        }
+
+        .dsach-content-item-text li {
+            margin-bottom: 6px;
+            display: inline-block;
+        }
+
+        .dsach-content-item-text .qua {
+            color: #f70c0c;
+            font-size: 18px;
+        }
+
+        .xemthem button {
+            width: 500px;
+            height: 40px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            /* margin-left: 326px; */
+            color: rgb(12, 11, 11);
+        }
+
+        .xemthem button:hover {
+            color: #009DE0;
+        }
+
+        .xemthem {
+            text-align: center;
+            padding-top: 20px;
+
+        }
+
+        .xemthem a {
+            color: #009DE0;
+
+
+        }
+
+        .box {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .box .box-tab li.active-tab {
+            background-color: #2f80ed;
+            border: 1px solid #2f80ed;
+            color: #fff;
+        }
+
+        .box .box-tab li:hover {
+            border: 1px solid #009DE0;
+        }
+
+        .box-tab li {
+            border: 1px solid #d2d2d2;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 14px;
+            line-height: 16px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            min-width: 100px;
+            padding: 10px;
+            text-align: center;
+            text-transform: uppercase;
+            background-color: #fff;
+        }
+
+        .box ul {
+            margin-left: 130px;
+            padding-top: 20px;
+        }
+
+        .content3 img {
+            float: left;
+            padding-top: 40px;
+            margin-left: 76px;
+        }
+
+        .thuonghieu .title-layout {
+            line-height: 16px;
+            float: left;
+            margin-left: 160px;
+            font-size: 20px;
+            padding-top: 10px;
+            margin-right: 655px;
+        }
+
+        .footer {
+            clear: both;
+            /* border-top: 1px solid #e2e2e2; */
+            background: #fff;
+        }
+
+        .footer-top {
+            padding: 38px 0 4px;
+            max-width: 1300px;
+            margin: auto;
+        }
+
+        /*.clearfix{
+            display: block;
+        }*/
+        .footer-1 {
+            float: left;
+            width: 33%;
+        }
+
+        .f-listmenu {
+            padding: 32px;
+        }
+
+        .f-listmenu li a {
+            margin-bottom: 10px;
+            color: #333;
+            line-height: 30px;
+            font-size: 16px;
+        }
+
+        .f-listmenu li a:hover {
+            color: #2f80ed;
+
+        }
+
+        .f-listmenu span {
+            color: #0078BB;
+        }
+
+        .finally {
+            background-color: #f1f1f1;
+            padding: 200px 0 20px;
+            border-top: 7px solid #009DE0;
+        }
+
+        .finally section {
+            margin: auto;
+            max-width: 1200px;
+        }
+
+        .finally p {
+            color: #666;
+            font-size: 12px;
+            margin-top: 40px;
+            background-color: #dae1e6;
+            border-radius: 2px;
+        }
+
+        .container .images {
+            height: 310px;
+            width: 100%;
+        }
+
+        .images img {
+            height: 310px;
+            width: 100%;
+
+
+        }
+
+        .btm-sliders {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .btm-sliders span {
+            height: 15px;
+            width: 50px;
+            border: 2px solid white;
+            margin: 0 3px;
+            cursor: pointer;
+        }
+
+        .btm-sliders span:hover {
+            background-color: white;
+        }
+
+        .container .slide {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45px;
+            height: 45px;
+            border: 2px solid white;
+            cursor: pointer;
+        }
+
+        .container .slide:hover {
+            background: rgba(255, 255, 255, 0);
+        }
+
+        .slide span {
+            font-size: 35px;
+            color: white;
+            line-height: 41px;
+        }
+
+        .container .right {
+            right: 0;
+        }
+
+        .container .images {
+            height: 310px;
+            width: 100%;
+        }
+
+        .images img {
+            height: 310px;
+            width: 100%;
+
+
+        }
+
+        .btm-sliders {
+            position: absolute;
+            bottom: 268px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .btm-sliders span {
+            height: 15px;
+            width: 50px;
+            border: 2px solid white;
+            margin: 0 3px;
+            cursor: pointer;
+        }
+
+        .btm-sliders span:hover {
+            background-color: white;
+        }
+
+        .container .slide {
+            position: absolute;
+            top: 310px;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 42px;
+            border: 2px solid white;
+            cursor: pointer;
+        }
+
+        /* .slide:hover{
+   background: rgba(255, 255, 255, 0.5);
+} */
+        .slide span {
+            font-size: 35px;
+            color: rgb(255, 255, 255);
+            line-height: 45px;
+        }
+
+        .container .right {
+            right: 0;
+        }
+
+        .slider {
+            width: 1230px;
+            height: 500px;
+            position: relative;
+
+            margin: -1px 0px 0px 0px;
+            overflow: hidden;
+        }
+
+        .slider #prev,
+        .slider #next {
+            border-radius: 5px;
+            position: absolute;
+            z-index: 1;
+            width: 40px;
+            font-size: 35px;
+            border: none;
+            background-color: rgb(30, 30, 30);
+            color: rgb(255, 255, 255);
+            top: 50%;
+            cursor: pointer;
+        }
+
+        .slider #next {
+            left: 94%;
+        }
+
+        .slide-show {
+            width: 1200px;
+        }
+
+        .slider #prev:hover,
+        .slider #next:hover {
+            background-color: rgb(51, 131, 205);
+        }
+
+        .items {
+            display: none;
+        }
+
+        .items.active {
+            display: block;
+
+        }
+
+        .items img {
+            width: 1197px;
+            height: 305px;
+            animation: zoom 1s ease;
+        }
+
+        .sp {
+            margin-left: 150px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="https://cdn.tgdd.vn/2022/02/banner/1200-44-1200x44-10.png" alt="">
+    </header>
+    <nav>
+        <div class="container">
+            <ul>
+
+                <li class=" logo ">
+                    <a href="">
+                        <img src="https://cdn.tgdd.vn/Files/2011/06/10/40705/lo-go-dienmayxanh.png" alt="">
+                    </a>
+                </li>
+                <li class="ĐL">
+                    <a href="./form-dk.html">Đăng ký<i class="ti-arrow-circle-down"></i></a>
+                </li>
+                <li class="search">
+                    <input type="text" placeholder="Bạn tìm gì..?"><i class="ti-search"></i>
+                </li>
+                <li class="giohang">
+                    <a href=""><button><i class="fa-solid fa-cart-shopping"></i>Giỏ hàng</button></a>
+                </li>
+                <li class="ĐH"><a href="">Lịch sử <br> đơn hàng</a></li>
+                <li class="nap">
+                    <a href=""><i class="fa-solid fa-bag-shopping"></i> Mua thẻ nạp ngay!</a>
+                </li>
+                <li class="TV"><a href="">Tư vấn chọn mua</a></li>
+                <li class="KM"><a href="">Khuyến mãi</a></li>
+                <li class="Bep">
+                    <a href="vao-bep.html"> Vào bếp</a>
+                </li>
+            </ul>
+        </div>
+
+
+    </nav>
+    <section class="menu-bar">
+        <div class="container">
+            <div class="menu-bar-content">
+                <ul class="item">
+                    <div class="DMuc">
+
+                        <a href=""> <b>Danh Mục</b> <i class="fa-solid fa-caret-down"></i></a>
+                        <a href="" class="all">Tất cả nhóm hàng</a>
+
+                    </div>
+                    <li class="Tivi">
+                        <a href=""><i class="fa-solid fa-desktop"></i>Ti Vi <i class="fa-solid fa-caret-down"></i></a>
+                        <div class="menu2">
+                            <ul>
+                                <li><a href="">Sony</a></li>
+                                <li><a href="">Samsung</a></li>
+                                <li><a href="">LG</a></li>
+                                <li><a href="">TCL</a></li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="Locnuoc">
+                        <a href=""><i class="fa-solid fa-droplet"></i>Lọc nước <i
+                                class="fa-solid fa-caret-down"></i></a>
+
+                        <div class="menu2">
+                            <ul>
+                                <li><a href="">RO âm tủ</a></li>
+                                <li><a href="">RO để bàn</a></li>
+                                <li><a href="">Ion kiềm</a></li>
+                                <li><a href="">Không điện</a></li>
+
+                            </ul>
+                        </div>
+
+                    </li>
+                    <li class="laptop">
+                        <a href=""><i class="fa-solid fa-laptop-medical"></i>Máy tính <i
+                                class="fa-solid fa-caret-down"></i></a>
+
+                        <div class="menu2">
+                            <ul>
+                                <li><a href="">Macbook</a></li>
+                                <li><a href="">ASUS</a></li>
+                                <li><a href="">HP</a></li>
+                                <li><a href="">Acer</a></li>
+
+                            </ul>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="anh">
+        <div class="container">
+            <div class="slider">
+                <button id="prev">
+                    < </button>
+                        <button id="next">></button>
+
+                        <div class="slide-show">
+                            <div class="items active">
+                                <img src="https://cdn.tgdd.vn/2022/03/banner/690-300-690x300-20.png">
+                            </div>
+                            <div class="items">
+                                <img src="https://cdn.tgdd.vn/2022/04/banner/690x300-690x300-1.png">
+                            </div>
+                            <div class="items">
+                                <img src="https://cdn.tgdd.vn/2022/04/banner/690-300-690x300-13.png ">
+                            </div>
+                            <div class="items">
+                                <img src="https://cdn.tgdd.vn/2022/04/banner/690-300-690x300-12.png">
+                            </div>
+                            <div class="items">
+                                <img src="https://cdn.tgdd.vn/2022/03/banner/690-300-690x300-30.png">
+                            </div>
+                        </div>
+
+
+
+                        <p id="title">
+                            <span id="number">1</span> /
+                            <span id="demo">5</span>
+                        </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="banner-1">
+        <div class="container">
+            <img src="https://cdn.tgdd.vn/2022/02/banner/1200-60-1200x60-4.png" alt="">
+        </div>
+    </section>
+    <section class="dsach">
+        <div class="container">
+
+            <div class="dsach-content">
+
+                <div class="dsach-content-item">
+                    <img src="https://cdn.tgdd.vn/Products/Images/166/227735/tu-dong-lg-gn-f304wb-300x300.jpg" alt="">
+                    <div class="dsach-content-item-text">
+                        <li class="qua">
+
+                            <p> Đặt sớm quà HOT </p>
+                        </li>
+                        <li>
+                            Loa cao câp 1.5 HP V13ENH1
+                        </li>
+                        <li>
+                            <b>20.290.000 <sup>đ</sup> </b>
+
+                        </li>
+                        <li>Giảm thêm 680.000 <sup>đ</sup> và Quà 900.000 <sup>đ</sup> </li>
+                    </div>
+                </div>
+
+
+                <div class="dsach-content-item">
+                    <img src="https://cdn.tgdd.vn/Products/Images/2162/268876/keo-karaoke-mobell-mk-5070-1.-600x600.jpg"
+                        alt="">
+                    <div class="dsach-content-item-text">
+                        <li class="qua">
+
+                            <p> Đặt sớm quà HOT </p>
+                        </li>
+                        <li>
+                            Loa kẹo kéo HP V13ENH1
+                        </li>
+                        <li>
+                            <b>15.290.000 <sup>đ</sup> </b>
+
+                        </li>
+                        <li>Giảm thêm 680.000 <sup>đ</sup> và Quà 900.000 <sup>đ</sup> </li>
+                    </div>
+                </div>
+
+
+
+                <div class="dsach-content-item">
+                    <img src="https://cdn.tgdd.vn/Products/Images/1982/267734/nagakawa-nk2c05mb-1.-600x600.jpg" alt="">
+                    <div class="dsach-content-item-text">
+                        <li class="qua">
+
+                            <p> Đặt sớm quà HOT </p>
+                        </li>
+                        <li>
+                            Bếp từ áp suất cao V13ENH1
+                        </li>
+                        <li>
+                            <b>12.500.000 <sup>đ</sup> </b>
+
+                        </li>
+                        <li>Giảm thêm 680.000 <sup>đ</sup> và Quà 900.000 <sup>đ</sup> </li>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="dsach-content-item">
+                    <img src="https://cdn.tgdd.vn/Products/Images/5473/273032/273032-600x600.jpg" alt="">
+                    <div class="dsach-content-item-text">
+                        <li class="qua">
+
+                            <p> Đặt sớm quà HOT </p>
+                        </li>
+                        <li>
+                            LG Inverter 1.5 HP V13ENH1
+                        </li>
+                        <li>
+                            <b>11.290.000 <sup>đ</sup> </b>
+
+                        </li>
+                        <li>Giảm thêm 680.000 <sup>đ</sup> và Quà 900.000 <sup>đ</sup> </li>
+                    </div>
+                </div>
+
+
+
+                <div class="dsach-content-item">
+                    <img src="https://cdn.tgdd.vn/Products/Images/1943/158471/tu-lanh-samsung-rt38k5982bs-sv--300x300.jpg"
+                        alt="">
+                    <div class="dsach-content-item-text">
+                        <li class="qua">
+
+                            <p> Đặt sớm quà HOT </p>
+                        </li>
+                        <li>
+                            Tủ lạnh Toshiba chất lượng cao
+                        </li>
+                        <li>
+                            <b>10.499.000 <sup>đ</sup> </b>
+
+                        </li>
+                        <li>Giảm thêm 680.000 <sup>đ</sup> và Quà 900.000 <sup>đ</sup> </li>
+                    </div>
+                </div>
+                <li class="xemthem">
+                    <button><a href="./danhsach.html">Xem Thêm </a></button>
+                </li>
+            </div>
+        </div>
+    </section>
+
+    <div class="sp">
+        <h1>Sản phẩm mới</h1>
+        <table class="table table-striped">
+            <tbody id="tableBody1">
+            </tbody>
+        </table>
+    </div>
+    <script src="store.js"></script>
+    <script src="product.js"></script>
+    </div>
+    <div class="box">
+        <ul class="box-tab">
+            <li class="active-tab">Điện lạnh nổi bật </li>
+            <li>Máy lạnh</li>
+            <li>Tủ lạnh</li>
+            <li>Máy giặt</li>
+            <li>Máy nước nóng</li>
+            <li>Tủ đông</li>
+        </ul>
+
+    </div>
+    <section class="dsach2">
+        <div class="container">
+            <div class="dsach2-content">
+
+                <div class="dsach-content-item">
+                    <img src="https://cdn.tgdd.vn/Products/Images/3385/195809/korihome-wpk-g61-4-300x300.jpg" alt="">
+                    <div class="dsach-content-item-text">
+                        <li class="qua">
+
+                            <p> Đặt sớm quà HOT </p>
+                        </li>
+                        <li>
+                            LG Inverter 1.5 HP V13ENH1
+                        </li>
+                        <li>
+                            <b>13.290.000 <sup>đ</sup> </b>
+
+                        </li>
+                        <li>Giảm thêm 650.000 <sup>đ</sup> và Quà 800.000 <sup>đ</sup> </li>
+                    </div>
+                </div>
+
+                <div class="dsach-content-item">
+                    <img src="https://cdn.tgdd.vn/Products/Images/1962/262543/may-nuoc-nong-truc-tiep-casper-4500w-en-45th11-021221-040517-600x600.jpg"
+                        alt="">
+                    <div class="dsach-content-item-text">
+                        <li class="qua">
+
+                            <p> Đặt sớm quà HOT </p>
+                        </li>
+                        <li>
+                            Inverter 1.6 HP V13ENH1
+                        </li>
+                        <li>
+                            <b>15.520.000 <sup>đ</sup> </b>
+
+                        </li>
+                        <li>Giảm thêm 206.000 <sup>đ</sup> và Quà 700.000 <sup>đ</sup> </li>
+                    </div>
+                </div>
+
+                <div class="dsach-content-item">
+                    <img src="https://cdn.tgdd.vn/Products/Images/3385/202989/may-loc-nuoc-ro-sunhouse-sha8858k-8-loi-2-300x300.jpg"
+                        alt="">
+                    <div class="dsach-content-item-text">
+                        <li class="qua">
+
+                            <p> Đặt sớm quà HOT </p>
+                        </li>
+                        <li>
+                            Máy lọc nước RO V13ENH1
+                        </li>
+                        <li>
+                            <b>9.290.000 <sup>đ</sup> </b>
+
+                        </li>
+                        <li>Giảm thêm 500.000 <sup>đ</sup> và Quà 1.000.000 <sup>đ</sup> </li>
+                    </div>
+                </div>
+
+                <div class="dsach-content-item">
+                    <img src="https://cdn.tgdd.vn/Products/Images/166/115068/sanaky-vh-3699w1-300-300x300.jpg" alt="">
+                    <div class="dsach-content-item-text">
+                        <li class="qua">
+
+                            <p> Đặt sớm quà HOT </p>
+                        </li>
+                        <li>
+                            Tủ đông Inverter V13ENH1
+                        </li>
+                        <li>
+                            <b>15.290.000 <sup>đ</sup> </b>
+
+                        </li>
+                        <li>Giảm thêm 400.000 <sup>đ</sup> và Quà 900.000 <sup>đ</sup> </li>
+                    </div>
+                </div>
+
+                <div class="dsach-content-item">
+                    <img src="https://cdn.tgdd.vn/Products/Images/3385/245831/ro-nong-lanh-cuckoo-cp-frp601sw-4-loi-300x300.jpg"
+                        alt="">
+                    <div class="dsach-content-item-text">
+                        <li class="qua">
+
+                            <p> Đặt sớm quà HOT </p>
+                        </li>
+                        <li>
+                            Lọc nước Inverter HP V13ENH1
+                        </li>
+                        <li>
+                            <b>10.290.000 <sup>đ</sup> </b>
+
+                        </li>
+                        <li>Giảm thêm 680.000 <sup>đ</sup> và Quà 900.000 <sup>đ</sup> </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="box">
+        <ul class="box-tab">
+            <li class="active-tab"> các dòng máy khoan </li>
+            <li>Máy rửa xe</li>
+            <li>Máy bơm</li>
+            <li>Ổn áp</li>
+            <li>Dụng cụ sửa</li>
+
+        </ul>
+    </div>
+    <section class="dsach2">
+        <div class="container">
+            <div class="dsach2-content">
+
+                <div class="dsach-content-item">
+                    <img src="https://cdn.tgdd.vn/Products/Images/4697/160314/bosch-gsb-16-re-11-300x300.JPG" alt="">
+                    <div class="dsach-content-item-text">
+                        <li class="qua">
+
+                            <p> Đặt sớm quà HOT </p>
+                        </li>
+                        <li>
+                            LG Inverter 1.5 HP V13ENH1
+                        </li>
+                        <li>
+                            <b>11.290.000 <sup>đ</sup> </b>
+
+                        </li>
+                        <li>Giảm thêm 680.000 <sup>đ</sup> và Quà 900.000 <sup>đ</sup> </li>
+                    </div>
+                </div>
+
+                <div class="dsach-content-item">
+                    <img src="https://cdn.tgdd.vn/Products/Images/4697/223151/bosch-gsb-120-li-1-pin-1-org-1-600x600.jpg"
+                        alt="">
+                    <div class="dsach-content-item-text">
+                        <li class="qua">
+
+                            <p> Đặt sớm quà HOT </p>
+                        </li>
+                        <li>
+                            LG Inverter 1.5 HP V13ENH1
+                        </li>
+                        <li>
+                            <b>11.290.000 <sup>đ</sup> </b>
+
+                        </li>
+                        <li>Giảm thêm 680.000 <sup>đ</sup> và Quà 900.000 <sup>đ</sup> </li>
+                    </div>
+                </div>
+
+                <div class="dsach-content-item">
+                    <img src="https://cdn.tgdd.vn/Products/Images/4697/223979/kachi-mk-212-1-org-1-600x600.jpg" alt="">
+                    <div class="dsach-content-item-text">
+                        <li class="qua">
+
+                            <p> Đặt sớm quà HOT </p>
+                        </li>
+                        <li>
+                            LG Inverter 1.5 HP V13ENH1
+                        </li>
+                        <li>
+                            <b>11.290.000 <sup>đ</sup> </b>
+
+                        </li>
+                        <li>Giảm thêm 680.000 <sup>đ</sup> và Quà 900.000 <sup>đ</sup> </li>
+                    </div>
+                </div>
+
+                <div class="dsach-content-item">
+                    <img src="https://cdn.tgdd.vn/Products/Images/4697/223979/kachi-mk-212-1-org-1-600x600.jpg" alt="">
+                    <div class="dsach-content-item-text">
+                        <li class="qua">
+
+                            <p> Đặt sớm quà HOT </p>
+                        </li>
+                        <li>
+                            LG Inverter 1.5 HP V13ENH1
+                        </li>
+                        <li>
+                            <b>11.290.000 <sup>đ</sup> </b>
+
+                        </li>
+                        <li>Giảm thêm 680.000 <sup>đ</sup> và Quà 900.000 <sup>đ</sup> </li>
+                    </div>
+                </div>
+
+                <div class="dsach-content-item">
+                    <img src="https://cdn.tgdd.vn/Products/Images/4697/222811/bosch-go-gen-2-2-mui-vit-300x300.jpg"
+                        alt="">
+                    <div class="dsach-content-item-text">
+                        <li class="qua">
+
+                            <p> Đặt sớm quà HOT </p>
+                        </li>
+                        <li>
+                            LG Inverter 1.5 HP V13ENH1
+                        </li>
+                        <li>
+                            <b>11.290.000 <sup>đ</sup> </b>
+
+                        </li>
+                        <li>Giảm thêm 680.000 <sup>đ</sup> và Quà 900.000 <sup>đ</sup> </li>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <section class="thoitrang">
+        <div class="thuonghieu">
+            <h4 class="title-layout">
+                CHUYÊN TRANG THƯƠNG HIỆU
+            </h4>
+            <div class="slide">
+                <div class="content3">
+
+                    <li>
+                        <a href="">
+                            <img src="https://cdn.tgdd.vn/2022/03/banner/samsung-390x210.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="https://cdn.tgdd.vn/2021/10/banner/dungcugd-390x210.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="https://cdn.tgdd.vn/2022/02/banner/giadungonline-1-390x210.png" alt="">
+                        </a>
+                    </li>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <section class="footer-top">
+            <div class="footer-1">
+                <ul class="f-listmenu">
+                    <li>
+                        <a href=""> <b> DV vệ sinh máy lạnh, máy giặt ,quạt</b></a>
+                    </li>
+                    <li>
+                        <a href="" class="txt">
+                            Dịch vụ Sửa điện - Nước
+                        </a>
+                        <br>
+                        Dành cho gia đình , Doanh nghiệp
+                    </li>
+                    <li>
+                        <a href=""> Lịch sử mua hàng</a>
+                    </li>
+                    <li>
+                        <a href=""> Cộng tác bán hàng cùng TGDĐ</a>
+                    </li>
+                    <li>
+                        <a href="">Tìm hiểu về mua trả góp</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="footer-1">
+                <ul class="f-listmenu">
+                    <li>
+                        <a href=""> <b> Giới thiệu công ty (MWG.vn)</b> </a>
+                    </li>
+                    <li>
+                        <a href="">Tuyển dụng</a>
+                    </li>
+                    <li>
+                        <a href="">Gửi góp ý , khiếu nại</a>
+                    </li>
+                    <li>
+                        <a href="">Tìm siêu thị (2061 shop)</a>
+                    </li>
+                    <li>
+                        <a href="">Xem bản mobile</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-1">
+                <ul class="f-listmenu">
+                    <li>
+                        <a href=""><b>Tổng đài hỗ trợ </b>(Miễn phí gọi)</a>
+                    </li>
+                    <li>
+                        <a href="">Gọi mua: <b> <span>1800.1061</span></b>( 7:30-22:00)</a>
+                    </li>
+                    <li>
+                        <a href="">Kỹ thuật: <b> <span>1800.1764</span></b> (7:30-22:00)</a>
+                    </li>
+                    <li>
+                        <a href="">Khiếu nại: <b> <span>1800.1063</span></b> (8:00-21:30)</a>
+                    </li>
+                    <li>
+                        <a href="">Bảo hành: <b> <span>1800.1065</span></b>(8:00-21:00)</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="finally">
+            <section>
+                <p>
+                    © 2018. Công ty cổ phần Thế Giới Di Động. GPDKKD: 0303217354 do sở KH & ĐT TP.HCM cấp ngày
+                    02/01/2007. GPMXH: 238/GP-BTTTT do Bộ Thông Tin và Truyền Thông cấp ngày 04/06/2020.
+                    Địa chỉ: 128 Trần Quang Khải, P. Tân Định, Q.1, TP.Hồ Chí Minh. Điện thoại: 028 38125960. Email:
+                    cskh@thegioididong.com. Chịu trách nhiệm nội dung: Huỳnh Văn Tốt.
+                </p>
+            </section>
+        </div>
+    </footer>
+    <script src="./slide.js"></script>
+</body>
+
+</html>

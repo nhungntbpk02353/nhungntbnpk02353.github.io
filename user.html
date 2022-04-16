@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/af4b63cb01.js" crossorigin="anonymous"></script> 
+    <title>danh sách sản phẩm</title>
+</head>
+<style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+
+  }
+
+  ul {
+      list-style: none;
+
+  }
+
+  a {
+      text-decoration: none;
+  }
+
+  li {
+      list-style: none;
+  }
+
+
+  .container {
+      max-width: 1200px;
+      margin: auto;
+  }
+
+  header {
+      background-color: #0078BB;
+      text-align: center;
+      border-radius: 2px;
+
+  }
+
+  .logo img {
+      width: 130px;
+      height: 48px;
+  }
+
+  nav {
+      background-color: #009DE0;
+      height: 50px;
+  }
+
+  nav ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  nav li,
+  a {
+      color: white;
+      font-size: 12px;
+  }
+  .search {
+      position: relative;
+  }
+
+  .search input {
+      height: 30px;
+      width: 100%;
+      border-radius: 5px;
+      padding-left: 6px;
+      outline: none;
+  }
+
+  .search i {
+      position: absolute;
+      font-size: 15px;
+      right: 12px;
+      color: rgb(99, 96, 96);
+      line-height: 30px;
+  }
+
+  .giohang button {
+      height: 35px;
+      width: 100%;
+      padding: 0 10px;
+      background-color: #009DE0;
+      color: white;
+      border: 1px solid rgb(214, 214, 214);
+      border-radius: 5px;
+  }
+
+  .giohang button:hover {
+      background-color: #deebf165;
+  }
+
+  .giohang button i {
+      margin-right: 10px;
+      color: white;
+  }
+
+  .box{
+      margin-bottom: 30px;
+      position: relative;
+  }
+  .box .box-tab li.active-tab {
+      background-color: #2f80ed;
+      border: 1px solid #2f80ed;
+      color: #fff;
+  }
+  .box .box-tab li:hover{
+      border: 1px solid #009DE0;
+  }
+  .box-tab li {
+      border: 1px solid #d2d2d2;
+      border-radius: 4px;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 14px;
+      line-height: 16px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      min-width: 100px;
+      padding: 10px;
+      text-align: center;
+      text-transform: uppercase;
+      background-color: #fff;
+  }
+  .box ul{
+      margin-left: 175px;
+      padding-top: 20px;
+  }
+
+  .dsach-container {
+      width: 1200px;
+  }
+
+  .dsach-content {
+     background:url(https://cdn.tgdd.vn/2022/03/banner/DESK-1200x90-2.png) no-repeat center center/cover;
+      padding: 15px;
+      overflow: auto;
+      height: 519px;
+  }
+  .dsach-content {
+      background-color: white;
+      padding: 15px;
+      overflow: auto;
+      height: 519px;
+  }
+
+  .dsach-content-items {
+      display: inline-block;
+
+      width: 1200px;
+      margin-left: 50px;
+  }
+
+  .dsach-content-item {
+      width: 19%;
+      background-color: white;
+      padding: 45px 36px 12px;
+      border-radius: 5px;
+      float: left;
+      margin: 0.5%;
+  }
+
+  .dsach-content-item>img {
+      width: 100%;
+      margin-left: 1px;
+      margin-bottom: 46px;
+
+  }
+
+  .dsach-content-item-text li {
+      margin-bottom: 6px;
+      display: inline-block;
+  }
+
+  .dsach-content-item-text .qua {
+      color: #f70c0c;
+      font-size: 18px;
+  }
+ .xemthem{
+  margin-left: 100px;
+ }
+ .qua a{
+     color: red;
+     font-size: 18px;
+ }
+ .footer {
+            clear: both;
+            /* border-top: 1px solid #e2e2e2; */
+            background: #fff;
+        }
+
+        .footer-top {
+            padding: 38px 0 4px;
+            max-width: 1300px;
+            margin: auto;
+        }
+
+        /*.clearfix{
+            display: block;
+        }*/
+        .footer-1 {
+            float: left;
+            width: 33%;
+        }
+
+        .f-listmenu {
+            padding: 32px;
+        }
+
+        .f-listmenu li a {
+            margin-bottom: 10px;
+            color: #333;
+            line-height: 30px;
+            font-size: 16px;
+        }
+
+        .f-listmenu li a:hover {
+            color: #2f80ed;
+
+        }
+
+        .f-listmenu span {
+            color: #0078BB;
+        }
+
+        .finally {
+            background-color: #f1f1f1;
+            padding: 200px 0 20px;
+            border-top: 7px solid #009DE0;
+        }
+
+        .finally section {
+            margin: auto;
+            max-width: 1200px;
+        }
+
+        .finally p {
+            color: #666;
+            font-size: 12px;
+            margin-top: 40px;
+            background-color: #dae1e6;
+            border-radius: 2px;
+        }
+</style>
+<body>
+<header>
+  <img src="https://cdn.tgdd.vn/2022/02/banner/1200-44-1200x44-10.png" alt="">
+</header>
+<nav>
+  <div class="container">
+      <ul>
+
+          <li class=" logo ">
+              <a href="">
+                  <img src="https://cdn.tgdd.vn/Files/2011/06/10/40705/lo-go-dienmayxanh.png" alt="">
+              </a>
+          </li>
+          <li class="ĐL">
+              <a href="form.html">Đăng ký<i class="ti-arrow-circle-down"></i></a>
+          </li>
+          <li class="search">
+              <input type="text" placeholder="Bạn tìm gì..?"><i class="ti-search"></i>
+          </li>
+          <li class="giohang">
+              <a href=""><button><i class="fa-solid fa-cart-shopping"></i>Giỏ hàng</button></a>
+          </li>
+          <li class="ĐH"><a href="">Lịch sử <br> đơn hàng</a></li>
+          <li class="nap">
+              <a href=""><i class="fa-solid fa-bag-shopping"></i> Mua thẻ nạp ngay!</a>
+          </li>
+          <li class="TV"><a href="">Tư vấn chọn mua</a></li>
+          <li class="KM"><a href="">Khuyến mãi</a></li>
+          <li class="Bep">
+              <a href="vao-bep.html"> Vào bếp</a>
+          </li>
+      </ul>
+  </div>
+</nav>
+
+
+<div class="box">
+    <ul class="box-tab">
+        <li class="active-tab"> TiVi & 
+            Điện lạnh nổi bật </li>
+        <li>Máy lạnh</li>
+        <li>Tủ lạnh</li>
+        <li>Máy giặt</li>
+        <li>Máy nước nóng</li>
+        <li>Tủ đông</li>
+    </ul>
+
+</div>
+<section class="dsach2">
+    <div class="container">
+        <div class="dsach2-content">
+ 
+            <div class="dsach-content-item">
+               
+                <img src="https://cdn.tgdd.vn/Products/Images/1942/235792/led-4k-samsung-ua55au8100-avatar-1-550x340.jpeg" alt="">
+                
+                <div class="dsach-content-item-text">
+                    <li class="qua">
+
+                       <a href="./chitietsp.html"> <p> Đặt sớm quà HOT </p></a>
+                    </li>
+                    <li>
+                       <p> LG Inverter 1.5 HP V13ENH1</p>
+                    </li>
+                    <li>
+                        <b>13.290.000 <sup>đ</sup> </b>
+
+                    </li>
+                    <li>Giảm thêm 650.000 <sup>đ</sup> và Quà 800.000 <sup>đ</sup> 
+                    </li>
+                    
+                </div>
+            </div>
+        
+
+            <div class="dsach-content-item">
+                <img src="https://cdn.tgdd.vn/Products/Images/1942/236888/TimerThumb/led-lg-55up7750ptb-(30).jpeg"
+                    alt="">
+                <div class="dsach-content-item-text">
+                    <li class="qua">
+
+                        <p> Đặt sớm quà HOT </p>
+                    </li>
+                    <li>
+                       Tivi Samsung Smart 
+                    </li>
+                    <li>
+                        <b>5.520.000 <sup>đ</sup> </b>
+
+                    </li>
+                    <li>Giảm thêm 206.000 <sup>đ</sup> và Quà 700.000 <sup>đ</sup> </li>
+                </div>
+            </div>
+
+            <div class="dsach-content-item">
+                <img src="https://cdn.tgdd.vn/Products/Images/1942/200520/sony-kdl-50w660g-244420-034444-550x340.jpg"
+                    alt="">
+                <div class="dsach-content-item-text">
+                    <li class="qua">
+
+                        <p> Đặt sớm quà HOT </p>
+                    </li>
+                    <li>
+                       Sony Smart TV-KDL 50W660G
+                    </li>
+                    <li>
+                        <b>9.290.000 <sup>đ</sup> </b>
+
+                    </li>
+                    <li>Giảm thêm 500.000 <sup>đ</sup> và Quà 1.000.000 <sup>đ</sup> </li>
+                </div>
+            </div>
+
+            <div class="dsach-content-item">
+                <img src="https://cdn.tgdd.vn/Products/Images/1942/235791/TimerThumb/led-4k-samsung-ua50au8100-(31).jpeg" alt="">
+                <div class="dsach-content-item-text">
+                    <li class="qua">
+
+                        <p> Đặt sớm quà HOT </p>
+                    </li>
+                    <li>
+                        Samsung Smart TV UHD 
+                    </li>
+                    <li>
+                        <b>15.290.000 <sup>đ</sup> </b>
+
+                    </li>
+                    <li>Giảm thêm 400.000 <sup>đ</sup> và Quà 900.000 <sup>đ</sup> </li>
+                </div>
+            </div>
+
+            <div class="dsach-content-item">
+                <img src="https://cdn.tgdd.vn/Products/Images/1942/242539/tu6900-550x340.jpg"
+                    alt="">
+                <div class="dsach-content-item-text">
+                    <li class="qua">
+
+                        <p> Đặt sớm quà HOT </p>
+                    </li>
+                    <li>
+                        TCL Smart Android TV
+                    </li>
+                    <li>
+                        <b>10.290.000 <sup>đ</sup> </b>
+
+                    </li>
+                    <li>Giảm thêm 680.000 <sup>đ</sup> và Quà 900.000 <sup>đ</sup> </li>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="dsach2">
+    <div class="container">
+        <div class="dsach2-content">
+
+            <div class="dsach-content-item">
+                <img src="https://cdn.tgdd.vn/Products/Images/3385/195809/korihome-wpk-g61-4-300x300.jpg" alt="">
+                <div class="dsach-content-item-text">
+                    <li class="qua">
+
+                        <p> Đặt sớm quà HOT </p>
+                    </li>
+                    <li>
+                       Lọc nước 1 vòi V13ENH1
+                    </li>
+                    <li>
+                        <b>10.290.000 <sup>đ</sup> </b>
+
+                    </li>
+                    <li>Giảm thêm 750.000 <sup>đ</sup> và Quà 900.000 <sup>đ</sup> </li>
+                </div>
+            </div>
+
+            <div class="dsach-content-item">
+                <img src="https://cdn.tgdd.vn/Products/Images/1991/274369/hommy-ph6870-thumb-1-600x600.jpg"
+                    alt="">
+                <div class="dsach-content-item-text">
+                    <li class="qua">
+
+                        <p> Đặt sớm quà HOT </p>
+                    </li>
+                    <li>
+                        Máy sấy tóc Hommy PH6870
+                    </li>
+                    <li>
+                        <b>450.000 <sup>đ</sup> </b>
+
+                    </li>
+                    <li>Giảm thêm 50.000 <sup>đ</sup> và Quà 100.000 <sup>đ</sup> </li>
+                </div>
+            </div>
+
+            <div class="dsach-content-item">
+                <img src="https://cdn.tgdd.vn/Products/Images/1943/220325/samsung-rt22m4032by-sv-300x300.jpg"
+                    alt="">
+                <div class="dsach-content-item-text">
+                    <li class="qua">
+
+                        <p> Đặt sớm quà HOT </p>
+                    </li>
+                    <li>
+                        Samsung  V13ENH1 316 lit
+                     </li>
+                    <li>
+                        <b>9.290.000 <sup>đ</sup> </b>
+
+                    </li>
+                    <li>Giảm thêm 500.000 <sup>đ</sup> và Quà 1.000.000 <sup>đ</sup> </li>
+                </div>
+            </div>
+
+            <div class="dsach-content-item">
+                <img src="https://cdn.tgdd.vn/Products/Images/1944/236124/samsung-ai-ww10t634dlx-sv-1.-600x600.jpg" alt="">
+                <div class="dsach-content-item-text">
+                    <li class="qua">
+
+                        <p> Đặt sớm quà HOT </p>
+                    </li>
+                    <li>
+                       Samsung Inverter V13ENH1 10kg
+                    </li>
+                    <li>
+                        <b>10.790.000 <sup>đ</sup> </b>
+
+                    </li>
+                    <li>Giảm thêm 400.000 <sup>đ</sup> và Quà 900.000 <sup>đ</sup> </li>
+                </div>
+            </div>
+
+            <div class="dsach-content-item">
+                <img src="https://cdn.tgdd.vn/Products/Images/2162/233355/mobell-mk-60801.-600x600.jpg"
+                    alt="">
+                <div class="dsach-content-item-text">
+                    <li class="qua">
+
+                        <p> Đặt sớm quà HOT </p>
+                    </li>
+                    <li>
+                        Loa kéo Karaoke 500W
+                    </li>
+                    <li>
+                        <b>5.940.000 <sup>đ</sup> </b>
+
+                    </li>
+                    <li>Giảm thêm 680.000 <sup>đ</sup> và Quà 900.000 <sup>đ</sup> </li>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <footer class="footer">
+        <section class="footer-top">
+            <div class="footer-1">
+                <ul class="f-listmenu">
+                    <li>
+                        <a href=""> <b> DV vệ sinh máy lạnh, máy giặt ,quạt</b></a>
+                    </li>
+                    <li>
+                        <a href="" class="txt">
+                            Dịch vụ Sửa điện - Nước
+                        </a>
+                        <br>
+                        Dành cho gia đình , Doanh nghiệp
+                    </li>
+                    <li>
+                        <a href=""> Lịch sử mua hàng</a>
+                    </li>
+                    <li>
+                        <a href=""> Cộng tác bán hàng cùng TGDĐ</a>
+                    </li>
+                    <li>
+                        <a href="">Tìm hiểu về mua trả góp</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="footer-1">
+                <ul class="f-listmenu">
+                    <li>
+                        <a href=""> <b> Giới thiệu công ty (MWG.vn)</b> </a>
+                    </li>
+                    <li>
+                        <a href="">Tuyển dụng</a>
+                    </li>
+                    <li>
+                        <a href="">Gửi góp ý , khiếu nại</a>
+                    </li>
+                    <li>
+                        <a href="">Tìm siêu thị (2061 shop)</a>
+                    </li>
+                    <li>
+                        <a href="">Xem bản mobile</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-1">
+                <ul class="f-listmenu">
+                    <li>
+                        <a href=""><b>Tổng đài hỗ trợ </b>(Miễn phí gọi)</a>
+                    </li>
+                    <li>
+                        <a href="">Gọi mua: <b> <span>1800.1061</span> </b>( 7:30-22:00)</a>
+                    </li>
+                    <li>
+                        <a href="">Kỹ thuật: <b> <span>1800.1764</span></b> (7:30-22:00)</a>
+                    </li>
+                    <li>
+                        <a href="">Khiếu nại: <b> <span>1800.1063</span> </b> (8:00-21:30)</a>
+                    </li>
+                    <li>
+                        <a href="">Bảo hành: <b> <span>1800.1065</span> </b>(8:00-21:00)</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="finally">
+            <section>
+                <p>
+
+                    © 2018. Công ty cổ phần Thế Giới Di Động. GPDKKD: 0303217354 do sở KH & ĐT TP.HCM cấp ngày
+                    02/01/2007. GPMXH: 238/GP-BTTTT do Bộ Thông Tin và Truyền Thông cấp ngày 04/06/2020.
+                    Địa chỉ: 128 Trần Quang Khải, P. Tân Định, Q.1, TP.Hồ Chí Minh. Điện thoại: 028 38125960. Email:
+                    cskh@thegioididong.com. Chịu trách nhiệm nội dung: Huỳnh Văn Tốt.
+                </p>
+            </section>
+        </div>
+    </footer>
+    <script>
+        
+    </script>
+</body>
+</html>
